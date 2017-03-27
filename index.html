@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8"/>
+    <!-- <meta name="keywords" content="St. Joseph Mukasa, Mukasa" />      
+    <meta name="copyright" content="St. Joseph Mukasa SHG is a registered group control by Caritas." charset="utf-8" />
+    <meta name="description" content="St. Joseph Mukasa SHG is a registered group uniting church members propelling individual development progress.">
+    <meta name="author" content="Caritas, Mukasa, glosoftgroup"> -->
+    <meta name="robots" content="index,follow" />
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    
+        <meta property="og:url"           content="http://sjmshg.glosftgroup.com" />
+	<meta property="og:type"          content="website" />
+	<meta property="og:title"         content="St.Joseph Mukasa | Reading" />
+	<meta property="og:description"   content="Reading 1, Malachi 3:1-4, 23-24" />
+	<meta property="og:image"         content="http://sjmshg.glosftgroup.com/img/glosoft_logo.png" />
+
+    <title>Home - stjosephmukasa</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine"> 
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="vendor/device-mockups/device-mockups.min.css">
+
+    <!-- Theme CSS -->
+    <link href="css/new-age.css" rel="stylesheet">
+	
+	<!-- Animate.css library -->
+	<link href="css/animate.min.css" rel="stylesheet">
+
+	<!-- Custom styles for this template -->
+	 <link href="css/demo.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+      <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+</head>
+
+<body id="page-top">
+    <script type="text/javascript">
+    $(document).ready(function (){
+            //alert("pageload event fired!"); 
+                $('#loader-icon').show();
+
+                $.ajax({
+                    url: "rss.php",
+                    type: "POST",
+                    contentType: false,
+                    cache: false,
+                    processData:false,
+                    success: function(data){
+                        $("#readingsdiv").html(data);
+                        $('#loader-icon').hide();
+                    },
+                    error: function(){}             
+                    
+                });
+
+    });
+    </script>  
+
+	<!-- Load Facebook SDK for JavaScript -->
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <div class="col-sm-4"></div>
+                <a class="navbar-brand page-scroll" href="index.html">St. Joseph Mukasa SHG</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+					<li>
+                        <a class="active page-scroll" href="#">Home</a>
+                    </li>
+					<li>
+                        <a class="page-scroll" href="about.html">About Us</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="products.html">Products</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="gallery.html">Gallery</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+	
+	 <header id="myCarousel" class="carousel slide mainpage">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+			<li data-target="#myCarousel" data-slide-to="3"></li>
+			<li data-target="#myCarousel" data-slide-to="4"></li>
+			<li data-target="#myCarousel" data-slide-to="5"></li> 
+        </ol>
+
+        <!-- Wrapper for Slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <!-- Set the first background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('img/sliders/1.jpeg');"></div>
+                <div class="carousel-caption">
+                    <h2>Text or caption</h2>
+					
+                </div>
+            </div>
+            <div class="item">
+                <!-- Set the second background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('img/sliders/2.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2>Text or caption</h2>
+                </div>
+            </div>
+            <div class="item">
+                <!-- Set the third background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('img/sliders/3.jpeg');"></div>
+                <div class="carousel-caption">
+                    <h2>Text or caption</h2>
+                </div>
+            </div>
+			<div class="item">
+                <!-- Set the third background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('img/sliders/4.jpeg');"></div>
+                <div class="carousel-caption">
+                    <h2>Text or caption</h2>
+                </div>
+            </div>
+			<div class="item">
+                <!-- Set the third background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('img/sliders/5.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2>Text or caption</h2>
+                </div>
+            </div>
+			<div class="item">
+                <!-- Set the third background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('img/sliders/6.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2>Text or caption</h2>
+                </div>
+            </div>
+			
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+
+    </header>
+
+<!-- testimonial section -->
+<section class="test our-testimonials">
+    <div class="container">
+        <h3 class="text-center">Daily Reading</h3>
+        <div id="myCarousel" data-ride="carousel" data-pause="hover">
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="test-details">  
+                                <div class="test-w3ls">
+                                <!-- Your share button code -->
+<div class="fb-share-button" data-href="http://sjmshg.glosoftgroup.com/" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fsjmshg.glosoftgroup.com%2F&amp;src=sdkpreparse"><img src="img/fb-share.png" width="80" height="40" /></a></div>
+                                    <div id="readingsdiv">
+                                        <p class="t1">Reading 1, Malachi 3:1-4, 23-24</p>
+    									<p class="t1">1 'Look, I shall send my messenger to clear a way before me. And suddenly the Lord whom you seek will come to his Temple; yes, the angel of the covenant, for whom you long, is on his way, says Yahweh Sabaoth.
+    									2 Who will be able to resist the day of his coming? Who will remain standing when he appears? For he will be like a refiner's fire, like fullers' alkali.
+    									3 He will take his seat as refiner and purifier; he will purify the sons of Levi and refine them like gold and silver, so that they can make the offering to Yahweh with uprightness.
+    									4 The offering of Judah and Jerusalem will then be acceptable to Yahweh as in former days, as in the years of old.
+    									23 'Look, I shall send you the prophet Elijah before the great and awesome Day of Yahweh comes.
+    									24 He will reconcile parents to their children and children to their parents, to forestall my putting the country under the curse of destruction.'</p>
+    									<p class="t1">Responsorial Psalm, Psalms 25:4-5, 8-9, 10, 14</p>
+    									<p class="t1">4 DIRECT me in your ways, Yahweh, and teach me your paths.
+    									5 ENCOURAGE me to walk in your truth and teach me since you are the God who saves me. FOR my hope is in you all day long -- such is your generosity, Yahweh.
+    									8 INTEGRITY and generosity are marks of Yahweh for he brings sinners back to the path.
+    									9 JUDICIOUSLY he guides the humble, instructing the poor in his way.
+    									10 KINDNESS unfailing and constancy mark all Yahweh's paths, for those who keep his covenant and his decrees.
+    									14 ONLY those who fear Yahweh have his secret and his covenant, for their understanding.</p>
+    									<p class="t1">Gospel, Luke 1:57-66</p>
+    									<p class="t1">57 The time came for Elizabeth to have her child, and she gave birth to a son;
+    									58 and when her neighbours and relations heard that the Lord had lavished on her his faithful love, they shared her joy.
+    									59 Now it happened that on the eighth day they came to circumcise the child; they were going to call him Zechariah after his father,
+    									60 but his mother spoke up. 'No,' she said, 'he is to be called John.'
+    									61 They said to her, 'But no one in your family has that name,'
+    									62 and made signs to his father to find out what he wanted him called.
+    									63 The father asked for a writing-tablet and wrote, 'His name is John.' And they were all astonished.
+    									64 At that instant his power of speech returned and he spoke and praised God.
+    									65 All their neighbours were filled with awe and the whole affair was talked about throughout the hill country of Judaea.
+    									66 All those who heard of it treasured it in their hearts. 'What will this child turn out to be?' they wondered. And indeed the hand of the Lord was with him.
+    									</p>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+</section>
+<!-- /testimonial section -->
+
+<!-- Testimonials -->
+<section class="our-testimonials" id="testimonials">
+    <h3 class="text-center">Motivational Quote</h3>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="test">
+                    <br/><p class="t2 text-center">Prayer is the key of the morning and the bolt of the evening</p>
+                    <p class="t2 text-center">~Mahatma Gandhi</p>   
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+<!-- Testimonials -->
+
+<!-- /w3ls -->
+<div class="w3ls">
+    <div class="container">
+    <div class="col-md-4 w3ls-right wow fadeInLeft animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
+            <h3>Contact Us</h3>
+            <ul class="con-icons">
+                <li><span class="glyphicon glyphicon-phone" aria-hidden="true"></span>+254 733 371 277<br/> &nbsp; &nbsp; &nbsp; +254 706 672 457</li>
+                <li><a href="mailto:info@example.com"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>josemukasa889@gmail.com</a></li>
+                <li><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Kahawa West, Estate</li>
+            
+            </ul>
+            
+        
+        </div>
+        <div class="col-md-4 w3ls-left wow fadeInUp animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+            <h3>Downloads</h3>
+            
+            <br/>
+           <p><a href="downloads/Registration_Form.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> &nbsp;Registration form</a></p>
+           <p><a href="downloads/Strategic_plan.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> &nbsp;Loan Application form</a></p>
+           <p><a href="downloads/Strategic_plan.pdf" target="_blank" ><i class="fa fa-file-pdf-o"></i> &nbsp;Strategic Plan</a></p>
+            
+        </div>
+        <div class="col-md-4 w3ls-right wow fadeInRight animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
+            <h3>We are social</h3>
+            
+            <ul class="fb_icons">
+                <li class="hvr-rectangle-out"><a class="fb" href="#"></a></li>
+            </ul>
+        </div>
+    
+        <div class="clearfix"></div>
+        <p class="copy-right wow fadeInUp animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">© 2016 St. Joseph Mukasa SHG. All rights reserved | Design by <a href="http://glosoftgroup.com/">glosoftgroup</a></p>
+            
+    </div>
+</div>
+<!-- //w3ls -->
+
+     
+    <!-- <footer>
+        <div class="container">
+            <p>&copy; 2016 glosoftgroup. All Rights Reserved.</p>
+            <ul class="list-inline">
+                <li>
+                    <a href="#">Privacy</a>
+                </li>
+                <li>
+                    <a href="#">Terms</a>
+                </li>
+                <li>
+                    <a href="#">FAQ</a>
+                </li>
+            </ul>
+        </div>
+    </footer> -->
+
+    <!-- Back To Top -->
+    <a href="#0" class="cd-top">Top</a>
+    <!-- /Back To Top -->
+	
+	<!-- jQuery -->
+    <!-- <script src="js/jquery.js"></script> -->
+
+    <!-- Bootstrap Core JavaScript -->
+    <!-- <script src="js/bootstrap.min.js"></script> -->   
+
+    <!-- jQuery -->
+    <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
+	<script src="js/jquery1.11/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/new-age.min.js"></script>
+
+    <script src="js/SmoothScroll.min.js"></script>
+    <!-- js for gallery -->
+    <script src="js/darkbox.js"></script>
+    <!-- /js for gallery -->
+    <!-- js for back to top -->
+    <script src="js/main.js"></script>
+	
+	<!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+    <script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+  // Store hash
+  var hash = this.hash;
+
+  // Using jQuery's animate() method to add smooth page scroll
+  // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+  $('html, body').animate({
+    scrollTop: $(hash).offset().top
+  }, 900, function(){
+
+    // Add hash (#) to URL when done scrolling (default click behavior)
+    window.location.hash = hash;
+    });
+  });
+})
+</script>
+<!-- /js for nav-smooth scroll -->
+<!-- js for slide animations -->
+<script>
+$(window).scroll(function() {
+  $(".slideanim").each(function(){
+    var pos = $(this).offset().top;
+
+    var winTop = $(window).scrollTop();
+    if (pos < winTop + 600) {
+      $(this).addClass("slide");
+    }
+  });
+});
+</script>
+<!-- /js for slide animations -->
+	
+	<!-- Demo scripts -->
+	<!-- <script src="js/demo.js"></script> -->
+
+</body>
+
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8"/>
+    <meta name="keywords" content="glosoftgroup, glosoft, group, mobile, web development, software development, kenya softwares, Kenya IT companies, Kenya IT company, Mpesa Integrations, Agency Banking, cyber security, cyber security Kenya, payments, mpesa, mpesa payments, credit cards payments, nfc payments, networking, IT supplies, android development, mobile development, T24 consultancy" />      
+    <meta name="copyright" content="glosoftgroup is a registered trademark of glosoftgroup of companies ltd" charset="utf-8" />
+    <meta name="description" content="glosoftgroup is an IT firm in Kenya dealing with powering payments, developing mobile and web platforms, offering networking services, cyber security and mobile payments integrations. We are based in Nairobi Kenya. We have a strong portfolio in banking Industry and enterprise softwares.">
+    <meta name="author" content="Kent Marete, Mercy Njeri Muhia, glosoftgroup">
+    <meta name="robots" content="index,follow" />
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    
+    <title>Contact - glosoftgroup</title>
+    
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="vendor/device-mockups/device-mockups.min.css">
+
+    <!-- Theme CSS -->
+    <link href="css/new-age.css" rel="stylesheet">
+
+    <!-- parsley CSS -->
+    <link href="css/parsley.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+</head>
+
+<body id="page-top">
+<script type="text/javascript">
+$(document).ready(function (e){
+$("#frmContact").on('submit',(function(e){
+    //alert('contact submitted..');
+    e.preventDefault();
+    $('#loader-icon').show();    
+    var valid = false;  
+    valid = validateContact();
+    //alert(valid);
+    if(valid) {
+        $.ajax({
+        url: "contact_mail.php",
+        type: "POST",
+        data:  new FormData(this),
+        contentType: false,
+        cache: false,
+        processData:false,
+        success: function(data){
+            $("#mail-status").html(data);
+
+            $("#frmContact").find("input[type=text], textarea, input[type=email]").val("");
+
+            $('#loader-icon').hide();
+
+        },
+        error: function(){}             
+        
+        });
+
+    }else{        
+        $("#mail-status").html("<div class='alert alert-danger' role='alert'>Error! Fill all the form fields correctly.</div>");
+        $('#loader-icon').hide();
+    }
+}));
+
+function validateContact() {
+    var valid = true;  
+
+    if(!$("#userName").val()) {
+        $("#userName-info").html("(required)");
+        $("#userName").css('background-color','#FFFFDF');
+        valid = false;
+    }
+    if(!$("#userEmail").val()) {
+        $("#userEmail-info").html("(required)");
+        $("#userEmail").css('background-color','#FFFFDF');
+        valid = false;
+    }
+    if(!$("#userEmail").val().match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)) {
+        $("#userEmail-info").html("(invalid)");
+        $("#userEmail").css('background-color','#FFFFDF');
+        valid = false;
+    }
+    if(!$("#subject").val()) {
+        $("#subject-info").html("(required)");
+        $("#subject").css('background-color','#FFFFDF');
+        valid = false;
+    }
+    if(!$("#content").val()) {
+        $("#content-info").html("(required)");
+        $("#content").css('background-color','#FFFFDF');
+        valid = false;
+    }
+    
+    return valid;
+}
+
+});
+</script>
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="index.html">St. Joseph Mukasa SHG</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="about.html">About Us</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="products.html">Products</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="gallery.html">Gallery</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    	
+	<div class="pageheaders">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7">
+                    <div class="header-content">
+                        <div class="header-content-inner">
+							<h1 class="text-center">Contact Us
+							</h1>							
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	<!-- Page Content -->
+    <div class="container">        
+        <div class="contact">
+                <div class="container">
+                        <div class="contact-top">
+                            <div class="col-md-4 contact-top-left">
+                                <div class="contact-top-one">
+                                    <h4>Address:</h4>
+                                        <h6>P.O. Box 65500 - 00607
+                                        <span>Kamiti</span>
+                                        </h6>
+                                </div>
+                                <div class="contact-top-one">
+                                    <h4>Phone:</h4>
+                                        <p>Telephone: +254 733 371 277
+                                        <span>Mobile: +254 706 672 457<span>
+                                        </p>
+                                </div>
+                                <div class="contact-top-one">
+                                    <h4>E-mail:</h4>
+                                    <p><a href="mailto:info@example.com">josemukasa889@gmail.com</a></p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-8">
+                            <div id="mail-status"></div>
+                              <form id="frmContact" name="frmContact" action="" method="post"  data-parsley-validate>
+                                 <div class="form-group">
+                                    <label for="userName">Name:</label>
+                                    <input type="text" class="form-control" name="userName" id="userName" data-parsley-required="true">
+                                  </div>
+                                 <div class="form-group">
+                                    <label for="email">Email address:</label>
+                                    <input type="email" class="form-control" name="userEmail" id="userEmail" data-parsley-type="email" data-parsley-required="true">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="userName">Subject:</label>
+                                    <input type="text" class="form-control" name="subject" id="subject" data-parsley-required="true">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="Message">Message:</label>
+                                    <textarea class="form-control" rows="5" name="content" id="content" data-parsley-required="true"></textarea>
+                                  </div> 
+                                <div class="sub-button">
+                                    <input type="submit" id="submitbtn" value="SEND">
+                                </div>
+                                <div id="loader-icon" style="display:none;"><img src="LoaderIcon.gif" /></div>
+                              </form>
+                            </div>
+
+                            
+                            <div class="clearfix"> </div>
+                        </div>
+
+                        <div class="contact-bottom">                        
+                        <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.792825089219!2d36.824490914295616!3d-1.2990838990524929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMTcnNTYuNyJTIDM2wrA0OSczNi4wIkU!5e0!3m2!1sen!2sus!4v1481663191863" width="600" height="450" frameborder="0" style="border:0"></iframe> -->
+                        </div>
+                </div>
+        </div>
+        <!--/contact-->
+		
+		</div>
+    <!-- /.container -->
+
+<!-- /w3ls -->
+<div class="w3ls">
+    <div class="container">
+    <div class="col-md-4 w3ls-right wow fadeInLeft animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
+            <h3>Contact Us</h3>
+            <ul class="con-icons">
+                <li><span class="glyphicon glyphicon-phone" aria-hidden="true"></span>+254 733 371 277<br/> &nbsp; &nbsp; &nbsp; +254 706 672 457</li>
+                <li><a href="mailto:info@example.com"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>josemukasa889@gmail.com</a></li>
+                <li><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Kahawa West, Estate</li>
+            
+            </ul>
+            
+        
+        </div>
+        <div class="col-md-4 w3ls-left wow fadeInUp animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+            <h3>Downloads</h3>
+            
+            <br/>
+           <p><a href="downloads/Registration_Form.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> &nbsp;Registration form</a></p>
+           <p><a href="downloads/Strategic_plan.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> &nbsp;Loan Application form</a></p>
+           <p><a href="downloads/Strategic_plan.pdf" target="_blank" ><i class="fa fa-file-pdf-o"></i> &nbsp;Strategic Plan</a></p>
+            
+        </div>
+        <div class="col-md-4 w3ls-right wow fadeInRight animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
+            <h3>We are social</h3>
+            
+            <ul class="fb_icons">
+                <li class="hvr-rectangle-out"><a class="fb" href="#"></a></li>
+            </ul>
+        </div>
+    
+        <div class="clearfix"></div>
+        <p class="copy-right wow fadeInUp animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">© 2016 St. Joseph Mukasa SHG. All rights reserved | Design by <a href="http://glosoftgroup.com/">glosoftgroup</a></p>
+            
+    </div>
+</div>
+<!-- //w3ls -->       
+
+    <!-- <footer>
+        <div class="container">
+            <p>&copy; 2016 glosoftgroup. All Rights Reserved.</p>
+            <ul class="list-inline">
+                <li>
+                    <a href="#">Privacy</a>
+                </li>
+                <li>
+                    <a href="#">Terms</a>
+                </li>
+                <li>
+                    <a href="#">FAQ</a>
+                </li>
+            </ul>
+        </div>
+    </footer> -->
+	
+	<!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+
+    <!-- validation -->
+    <script type="text/javascript">
+      $('#frmContact').parsley();
+    </script>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/new-age.min.js"></script>
+
+    <!-- parsely validator -->
+    <script src="js/parsley.min.js"></script>
+
+</body>
+
+</html>
